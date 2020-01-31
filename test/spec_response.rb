@@ -98,7 +98,6 @@ describe Rack::Response do
   end
 
   it "can set SameSite cookies with symbol value :none" do
-    puts 'HIIIIII'
     response = Rack::Response.new
     response.set_cookie "foo", { value: "bar", same_site: :none }
     response["Set-Cookie"].must_equal "foo=bar; SameSite=None"
