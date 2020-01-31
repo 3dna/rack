@@ -319,6 +319,8 @@ module Rack
             '; SameSite=Lax'.freeze
           when true, :strict, 'Strict', :Strict
             '; SameSite=Strict'.freeze
+          when :none, 'None', :None
+            '; SameSite=None'.freeze
           else
             raise ArgumentError, "Invalid SameSite value: #{value[:same_site].inspect}"
           end
